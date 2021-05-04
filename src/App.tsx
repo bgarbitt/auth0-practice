@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppLayout from "./AppLayout";
+import { Redirect, Route, Switch } from "react-router";
+import Home from "./Home";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const { isAuthenticated, isLoading } = useAuth0();
+
+  console.log(isAuthenticated);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppLayout>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    </AppLayout>
   );
 }
 
