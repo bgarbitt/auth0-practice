@@ -2,22 +2,22 @@ import "./App.css";
 import AppLayout from "./AppLayout";
 import { Redirect, Route, Switch } from "react-router";
 import Home from "./Home";
-import { useAuth0 } from "@auth0/auth0-react";
+import { Profile } from "./Profile";
 
-function App() {
-  const { isAuthenticated, isLoading } = useAuth0();
-
-  console.log(isAuthenticated);
+const App = () => {
   return (
     <AppLayout>
       <Switch>
         <Route path="/" exact>
           <Home />
         </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
         <Redirect to="/" />
       </Switch>
     </AppLayout>
   );
-}
+};
 
 export default App;
