@@ -1,4 +1,4 @@
-import { useAuth0, RedirectLoginOptions } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { FunctionComponent } from "react";
 
 const LoginButton: FunctionComponent = () => {

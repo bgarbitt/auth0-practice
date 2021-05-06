@@ -15,7 +15,13 @@ const NavHeader: FunctionComponent = () => {
           <img src={Logo} alt="Logo" className="w-16 h-16 hover:bg-gray-700" />
         </Link>
       </div>
-      <div className="px-4 py-3">
+      <div className="grid grid-cols-2 px-4 py-3">
+        <Link
+          to="/profile"
+          className="inline-block px-4 py-3 rounded-lg leading-none text-sm font-medium text-gray-300 ml-2 hover:bg-gray-700"
+        >
+          Profile
+        </Link>
         {isLoading ? null : isAuthenticated ? (
           <LogoutButton />
         ) : (
